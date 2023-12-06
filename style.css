@@ -10,6 +10,14 @@
     url(./fonts/Rejouice-Headline.ttf) format("truetype");
 }
 
+:root {
+  --clr-accent: #FF5F38;
+  --clr-white: #FAF8F3;
+  --clr-black: #0E0E0E;
+
+  --size-400: 1rem;
+}
+
 *,
 *::before,
 *::after {
@@ -17,6 +25,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: nb;
+  font-weight: 500;
 }
 
 html,
@@ -30,6 +39,8 @@ body {
   height: 100vh;
   width: 100%;
   position: relative;
+  color: var(--clr-black);
+  background-color: var(--clr-white);
 }
 
 #page1 video {
@@ -42,7 +53,7 @@ body {
 #page1-content {
   height: 100%;
   width: 100%;
-  color: #dadada;
+  color: var(--clr-white);
   position: relative;
   z-index: 10;
 
@@ -56,7 +67,7 @@ body {
   width: 7.5vw;
   height: 7.5vw;
   border-radius: 100vmax;
-  background-color: #ff5f38;
+  background-color: var(--clr-accent);
 
   display: flex;
   align-items: center;
@@ -118,15 +129,88 @@ nav h4 {
   font-size: 1.7vw;
   font-weight: 500;
 }
-#page2-top h3 {
-  /* width: 26%; */
-}
 
 .elem {
   overflow: hidden;
 }
 
+.elem span {
+  font-family: inherit;
+}
+
 .elem h1 {
   font-size: 4.2vw;
   font-weight: 500;
+}
+
+
+#page3 {
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  padding: 3vw;
+}
+
+#page3-top {
+  text-align: center;
+}
+
+#page3-top h4 {
+  margin-bottom: 1vw;
+  font-size: 1.25vw;
+  font-weight: 500;
+}
+
+#page3-top h4 span {
+  text-align: center;
+  font-size: 1vw;
+  border-radius: 100px;
+  padding: 6px 12px;
+  background-color: var(--clr-black);
+  color: var(--clr-white);
+}
+
+#page3>h2 {
+  font-size: 1.75vw;
+  margin-top: 12vw;
+  margin-bottom: 1vw;
+}
+
+#page3-top h2 {
+  /* line-height: 1; */
+  font-size: 4vw;
+}
+
+#page3-elements {
+  height: 82.5vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+#page3-elements .box {
+  cursor: pointer;
+  height: 100%;
+  width: 32.5%;
+  position: relative;
+}
+
+#page3-elements .box video,
+#page3-elements .box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+#page3-elements .box img {
+  position: absolute;
+  transition: all linear 0.7s;
+
+}
+
+#page3-elements .box:hover img {
+  opacity: 0;
 }

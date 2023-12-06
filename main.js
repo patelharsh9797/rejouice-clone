@@ -1,14 +1,9 @@
-// TODO: Variables
-
-// ---------------------------
-// TODO: Event Listeners
-// ---------------------------
+// TODO: Function Calls
 locoMotiveScroll();
 cursorEffect();
 page2Effect();
-// ---------------------------
+image2Video();
 // TODO: Event Functions
-// ---------------------------
 
 function locoMotiveScroll() {
   gsap.registerPlugin(ScrollTrigger);
@@ -79,14 +74,40 @@ function cursorEffect() {
 function page2Effect() {
   gsap.from(".elem h1", {
     y: 120,
-    stagger: 0.2,
+    stagger: 0.5,
     duration: 1,
     scrollTrigger: {
       trigger: "#page2",
       scroller: "#main",
-      start: "top 47%",
+      start: "top 40%",
       end: "top 37%",
       scrub: 2,
     },
+  });
+  gsap.from(".elem h4, .elem h3", {
+    y: 20,
+    stagger: 0.2,
+    duration: 0.5,
+    scrollTrigger: {
+      trigger: "#page2",
+      scroller: "#main",
+      start: "top 80%",
+      end: "top 60%",
+      scrub: 2,
+    },
+  });
+}
+
+function image2Video() {
+  const allImageBox = document.querySelectorAll("#page3-elements .box");
+  allImageBox.forEach((box) => {
+    const videoElem = box.querySelector("video");
+    box.addEventListener("mouseenter", () => {
+      videoElem.currentTime = 0;
+      videoElem.play();
+    });
+    box.addEventListener("mouseleave", () => {
+      videoElem.pause();
+    });
   });
 }
