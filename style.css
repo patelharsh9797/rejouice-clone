@@ -1,22 +1,13 @@
 @font-face {
-  font-family: "Gilroy-Regular";
-  src: local("Gilroy-Regular"),
-    url(./fonts/Gilroy-Regular.ttf) format("truetype");
+  font-family: nb;
+  src: local("NBInternationalProBoo"),
+    url(./fonts/NBInternationalProBoo.ttf) format("truetype");
 }
 
 @font-face {
-  font-family: "Gilroy-Bold";
-  src: local("Gilroy-Bold"), url(./fonts/Gilroy-Bold.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: "Gilroy-Medium";
-  src: local("Gilroy-Medium"), url(./fonts/Gilroy-Medium.ttf) format("truetype");
-}
-
-@font-face {
-  font-family: "Gilroy-Light";
-  src: local("Gilroy-Light"), url(./fonts/Gilroy-Light.ttf) format("truetype");
+  font-family: rh;
+  src: local("Rejouice-Headline"),
+    url(./fonts/Rejouice-Headline.ttf) format("truetype");
 }
 
 *,
@@ -25,7 +16,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Gilroy-Regular";
+  font-family: nb;
 }
 
 html,
@@ -37,7 +28,6 @@ body {
 #page1 {
   height: 100vh;
   width: 100%;
-  background-color: #dadada;
   position: relative;
 }
 
@@ -51,7 +41,56 @@ body {
 #page1-content {
   height: 100%;
   width: 100%;
-  background-color: #0f0f0f;
   color: #dadada;
   position: relative;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#cursor {
+  width: 7.5vw;
+  height: 7.5vw;
+  border-radius: 100vmax;
+  background-color: #ff5f38;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: fixed;
+  z-index: 9;
+}
+
+#cursor h5 {
+  font-size: 1.15vw;
+  font-weight: 500;
+}
+
+nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3vw;
+}
+
+nav h3,
+nav h4 {
+  font-size: 1.4vw;
+  font-weight: 400;
+}
+
+#page1-content h1 {
+  font-family: rh;
+  font-size: 27vw;
+  line-height: 27vw;
+  font-weight: 100;
+}
+
+#page1-content h1 span {
+  font-family: inherit;
 }
