@@ -10,6 +10,26 @@
     url(./fonts/Rejouice-Headline.ttf) format("truetype");
 }
 
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
 *,
 *::before,
 *::after {
@@ -23,6 +43,7 @@ html,
 body {
   height: 100%;
   width: 100%;
+  scroll-behavior: smooth;
 }
 
 #page1 {
@@ -62,6 +83,7 @@ body {
   justify-content: center;
 
   position: fixed;
+  transform: translate(-50%, -50%);
   z-index: 9;
 }
 
@@ -93,4 +115,9 @@ nav h4 {
 
 #page1-content h1 span {
   font-family: inherit;
+}
+
+#page2 {
+  height: 100vh;
+  background-color: salmon;
 }
