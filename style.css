@@ -1,13 +1,13 @@
 @font-face {
   font-family: nb;
   src: local("NBInternationalProBoo"),
-    url(./fonts/NBInternationalProBoo.ttf) format("truetype");
+    url(./public/fonts/NBInternationalProBoo.ttf) format("truetype");
 }
 
 @font-face {
   font-family: rh;
   src: local("Rejouice-Headline"),
-    url(./fonts/Rejouice-Headline.ttf) format("truetype");
+    url(./public/fonts/Rejouice-Headline.ttf) format("truetype");
 }
 
 :root {
