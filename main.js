@@ -1,6 +1,7 @@
 // TODO: Function Calls
 locoMotiveScroll();
-cursorEffect();
+cursorEffect("#page1", "#page1-content");
+cursorEffect("#page4", "#page4");
 page2Effect();
 image2Video();
 // TODO: Event Functions
@@ -45,9 +46,10 @@ function locoMotiveScroll() {
   ScrollTrigger.refresh();
 }
 
-function cursorEffect() {
-  const page1Content = document.querySelector("#page1-content");
-  const cursor = document.querySelector("#cursor");
+function cursorEffect(pageId, contentId) {
+  const page = document.querySelector(pageId);
+  const page1Content = document.querySelector(contentId);
+  const cursor = page.querySelector(".cursor");
 
   page1Content.addEventListener("mousemove", (dets) => {
     gsap.to(cursor, {
