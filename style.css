@@ -108,7 +108,8 @@ nav h4 {
 }
 
 #page2,
-#page4 {
+#page4,
+.textPage {
   height: 100vh;
   width: 100%;
   position: relative;
@@ -116,7 +117,8 @@ nav h4 {
 }
 
 #page2-top,
-#page4-top {
+#page4-top,
+.textPage-top {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -128,7 +130,9 @@ nav h4 {
 #page2-top h3,
 #page2-top h4,
 #page4-top h3,
-#page4-top h4 {
+#page4-top h4,
+.textPage-top h3,
+.textPage-top h4 {
   font-size: 1.7vw;
   font-weight: 500;
 }
@@ -262,4 +266,10 @@ nav h4 {
 
 #page5-content h2 {
   font-size: 4vw;
+}
+
+
+/* TODO: Utils */
+.padding-top-900 {
+  padding-top: calc(9 * var(--size-400)) !important;
 }

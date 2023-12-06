@@ -4,6 +4,7 @@ cursorEffect("#page1", "#page1-content");
 cursorEffect("#page5", "#page5");
 pageTextPopupEffect("#page2");
 pageTextPopupEffect("#page4");
+pageTextPopupEffect("#page6");
 image2Video();
 // TODO: Event Functions
 
