@@ -1,8 +1,9 @@
 // TODO: Function Calls
 locoMotiveScroll();
 cursorEffect("#page1", "#page1-content");
-cursorEffect("#page4", "#page4");
-page2Effect();
+cursorEffect("#page5", "#page5");
+pageTextPopupEffect("#page2");
+pageTextPopupEffect("#page4");
 image2Video();
 // TODO: Event Functions
 
@@ -48,24 +49,24 @@ function locoMotiveScroll() {
 
 function cursorEffect(pageId, contentId) {
   const page = document.querySelector(pageId);
-  const page1Content = document.querySelector(contentId);
+  const pageContent = document.querySelector(contentId);
   const cursor = page.querySelector(".cursor");
 
-  page1Content.addEventListener("mousemove", (dets) => {
+  pageContent.addEventListener("mousemove", (dets) => {
     gsap.to(cursor, {
       x: dets.x,
       y: dets.y,
     });
   });
 
-  page1Content.addEventListener("mouseenter", (dets) => {
+  pageContent.addEventListener("mouseenter", (dets) => {
     gsap.to(cursor, {
       scale: 1,
       opacity: 1,
     });
   });
 
-  page1Content.addEventListener("mouseleave", (dets) => {
+  pageContent.addEventListener("mouseleave", (dets) => {
     gsap.to(cursor, {
       scale: 0,
       opacity: 0,
@@ -73,25 +74,25 @@ function cursorEffect(pageId, contentId) {
   });
 }
 
-function page2Effect() {
-  gsap.from(".elem h1", {
+function pageTextPopupEffect(pageId) {
+  gsap.from(`${pageId} .elem h1`, {
     y: 120,
     stagger: 0.5,
     duration: 1,
     scrollTrigger: {
-      trigger: "#page2",
+      trigger: pageId,
       scroller: "#main",
       start: "top 40%",
       end: "top 37%",
       scrub: 2,
     },
   });
-  gsap.from(".elem h4, .elem h3", {
+  gsap.from(`${pageId} .elem h4, ${pageId} .elem h3`, {
     y: 20,
     stagger: 0.2,
     duration: 0.5,
     scrollTrigger: {
-      trigger: "#page2",
+      trigger: pageId,
       scroller: "#main",
       start: "top 80%",
       end: "top 60%",
