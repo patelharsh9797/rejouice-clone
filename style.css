@@ -62,6 +62,8 @@ body {
   justify-content: space-between;
 }
 
+
+
 .cursor {
   width: 7.5vw;
   height: 7.5vw;
@@ -118,7 +120,8 @@ nav h4 {
 
 #page2-top,
 #page4-top,
-.textPage-top {
+.textPage-top,
+#page7-top {
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -268,8 +271,55 @@ nav h4 {
   font-size: 4vw;
 }
 
+#page7 {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  padding: 5vw;
+}
+
+#page7 h2 {
+  font-size: 8vw;
+  font-family: rh;
+  font-weight: normal;
+}
+
 
 /* TODO: Utils */
-.padding-top-900 {
-  padding-top: calc(9 * var(--size-400)) !important;
+.padding-block-900 {
+  padding-block: calc(9 * var(--size-400)) !important;
+}
+
+#page7-content p {
+  font-size: 1vw;
+}
+
+.hoverLink {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  font-size: inherit;
+  color: inherit;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.hoverLink:hover::after {
+  transform: translateX(0%);
+}
+
+.hoverLink::after {
+  content: "";
+  bottom: 0px;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--clr-black);
+  transform: translateX(-120%);
+  transition: all ease-in-out 0.3s;
+}
+
+.hoverLink.white::after {
+  background-color: var(--clr-white);
 }

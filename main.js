@@ -1,11 +1,15 @@
 // TODO: Function Calls
 locoMotiveScroll();
+image2Video();
+
 cursorEffect("#page1", "#page1-content");
 cursorEffect("#page5", "#page5");
+
 pageTextPopupEffect("#page2");
 pageTextPopupEffect("#page4");
 pageTextPopupEffect("#page6");
-image2Video();
+pageTextPopupEffect("#page7");
+
 // TODO: Event Functions
 
 function locoMotiveScroll() {
@@ -88,7 +92,7 @@ function pageTextPopupEffect(pageId) {
       scrub: 2,
     },
   });
-  gsap.from(`${pageId} .elem h4, ${pageId} .elem h3`, {
+  gsap.from(`${pageId} .elem h2, ${pageId} .elem h4, ${pageId} .elem h3`, {
     y: 20,
     stagger: 0.2,
     duration: 0.5,
