@@ -125,32 +125,40 @@ function swiperJS() {
   var swiper = new Swiper(".mySwiper", {
     slidesPerView: 4,
     spaceBetween: 15,
-    speed: 1000,
+    speed: 10000,
     loop: true,
     autoplay: {
-      delay: 2500,
+      delay: 1,
       duration: 1,
-      disableOnInterval: false,
+      disableOnInteraction: false,
     },
   });
 }
 
-const stopLoadAnim = () => {
-  const tl = gsap.timeline();
+const tl = gsap.timeline();
 
-  tl.from("#loader h3 span", {
-    x: 40,
+tl.from("#loader h3 span", {
+  x: 40,
+  opacity: 0,
+  duration: 1.25,
+  stagger: 0.1,
+})
+  .to("#loader h3", {
+    x: -40,
     opacity: 0,
-    duration: 1.25,
-    stagger: 0.1,
+    duration: 0.75,
   })
-    .to("#loader h3", {
-      x: -40,
-      opacity: 0,
-    })
-    .to("#loader", {
-      opacity: 0,
-      display: "none",
-      duration: 1,
-    });
-};
+  .to("#loader", {
+    opacity: 0,
+    duration: 1,
+  })
+  .from("#page1-content h1 span", {
+    y: 100,
+    opacity: 0,
+    stagger: 0.1,
+    delay: -0.5,
+    duration: 0.5,
+  })
+  .to("#loader", {
+    display: "none",
+  });
