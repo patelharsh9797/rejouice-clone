@@ -3,6 +3,7 @@ gsapTimeline();
 locoMotiveScroll();
 swiperJS();
 image2Video();
+svgAnimation();
 
 cursorEffect("#page1", "#page1-content");
 cursorEffect("#page5", "#page5");
@@ -136,6 +137,27 @@ function swiperJS() {
   });
 }
 
+function svgAnimation() {
+  const trigger = document.getElementById("page5-video");
+
+  const mainSvg = document.getElementById("mainSvg");
+  const circleSvg = document.getElementById("circleSvg");
+
+  gsap.to(circleSvg, {
+    rotation: 250,
+    transformOrigin: "50% 50%",
+    duration: 2,
+    ease: "circ.out",
+    scrollTrigger: {
+      trigger,
+      scroller: "#main",
+      start: "top 10%",
+      end: "top 100%",
+      scrub: 10,
+    },
+  });
+}
+
 function gsapTimeline() {
   const tl = gsap.timeline();
 
@@ -170,5 +192,6 @@ function gsapTimeline() {
     })
     .to("#loader", {
       display: "none",
+      delay: -0.5,
     });
 }
