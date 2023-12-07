@@ -93,9 +93,32 @@ nav {
   padding: 3vw;
 }
 
+nav .navAction {
+  display: flex;
+  align-items: center;
+  gap: calc(1 * var(--size-400));
+}
+
+.navAction a {
+  background-color: var(--clr-black);
+  border-radius: 100vmax;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navAction a:hover {
+  opacity: 0.75;
+}
+
+.navAction a img {
+  width: 2.5vw;
+  height: 2.5vw;
+}
+
 nav h3,
 nav h4 {
-  font-size: 1.4vw;
+  font-size: 1.7vw;
   font-weight: 400;
 }
 

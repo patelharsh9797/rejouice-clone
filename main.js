@@ -1,4 +1,5 @@
 // TODO: Function Calls
+gsapTimeline();
 locoMotiveScroll();
 swiperJS();
 image2Video();
@@ -135,37 +136,39 @@ function swiperJS() {
   });
 }
 
-const tl = gsap.timeline();
+function gsapTimeline() {
+  const tl = gsap.timeline();
 
-tl.from("#loader h3", {
-  opacity: 0,
-  stagger: 0.5,
-})
-  .from("#loader h3 span", {
-    x: 40,
+  tl.from("#loader h3", {
     opacity: 0,
-    duration: 1.5,
-    stagger: 0.1,
-    ease: "power1.out",
+    stagger: 0.5,
   })
-  .to("#loader h3", {
-    x: -20,
-    opacity: 0,
-    delay: 0.5,
-    duration: 0.5,
-  })
-  .to("#loader", {
-    opacity: 0,
-    duration: 1.5,
-  })
-  .from("#page1-content h1 span", {
-    opacity: 0,
-    y: 100,
-    stagger: 0.1,
-    delay: -0.5,
-    duration: 0.5,
-    ease: "power3.out",
-  })
-  .to("#loader", {
-    display: "none",
-  });
+    .from("#loader h3 span", {
+      x: 40,
+      opacity: 0,
+      duration: 1.5,
+      stagger: 0.1,
+      ease: "power1.out",
+    })
+    .to("#loader h3", {
+      x: -20,
+      opacity: 0,
+      delay: 0.5,
+      duration: 0.5,
+    })
+    .to("#loader", {
+      opacity: 0,
+      duration: 1.5,
+    })
+    .from("#page1-content h1 span", {
+      opacity: 0,
+      y: 100,
+      stagger: 0.1,
+      delay: -0.5,
+      duration: 0.5,
+      ease: "power3.out",
+    })
+    .to("#loader", {
+      display: "none",
+    });
+}
