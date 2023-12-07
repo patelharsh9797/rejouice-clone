@@ -366,3 +366,33 @@ nav h4 {
   object-fit: cover;
   object-position: center;
 }
+
+#loader {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  z-index: 99;
+  background-color: var(--clr-black);
+  color: var(--clr-white);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#loader h3 {
+  font-size: 2vw;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(0.5*var(--size-400));
+}
+
+#loader h3 span {
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+}

@@ -134,3 +134,23 @@ function swiperJS() {
     },
   });
 }
+
+const stopLoadAnim = () => {
+  const tl = gsap.timeline();
+
+  tl.from("#loader h3 span", {
+    x: 40,
+    opacity: 0,
+    duration: 1.25,
+    stagger: 0.1,
+  })
+    .to("#loader h3", {
+      x: -40,
+      opacity: 0,
+    })
+    .to("#loader", {
+      opacity: 0,
+      display: "none",
+      duration: 1,
+    });
+};
