@@ -137,27 +137,34 @@ function swiperJS() {
 
 const tl = gsap.timeline();
 
-tl.from("#loader h3 span", {
-  x: 40,
+tl.from("#loader h3", {
   opacity: 0,
-  duration: 1.25,
-  stagger: 0.1,
+  stagger: 0.5,
 })
-  .to("#loader h3", {
-    x: -40,
+  .from("#loader h3 span", {
+    x: 40,
     opacity: 0,
-    duration: 0.75,
+    duration: 1.5,
+    stagger: 0.1,
+    ease: "power1.out",
+  })
+  .to("#loader h3", {
+    x: -20,
+    opacity: 0,
+    delay: 0.5,
+    duration: 0.5,
   })
   .to("#loader", {
     opacity: 0,
-    duration: 1,
+    duration: 1.5,
   })
   .from("#page1-content h1 span", {
-    y: 100,
     opacity: 0,
+    y: 100,
     stagger: 0.1,
     delay: -0.5,
     duration: 0.5,
+    ease: "power3.out",
   })
   .to("#loader", {
     display: "none",

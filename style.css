@@ -53,6 +53,7 @@ body {
   height: 100%;
   width: 100%;
   color: var(--clr-white);
+  background-color: #0e0e0e47;
   position: relative;
   z-index: 10;
 
