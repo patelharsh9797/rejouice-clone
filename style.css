@@ -272,16 +272,29 @@ nav h4 {
 }
 
 #page7 {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   position: relative;
-  padding: 5vw;
+  padding: 0;
+}
+
+#page7-top {
+  width: 96%;
+  margin-inline: auto;
+  padding-bottom: 3vw;
 }
 
 #page7 h2 {
   font-size: 8vw;
   font-family: rh;
+  line-height: 1;
   font-weight: normal;
+}
+
+#page7-content {
+  width: 100%;
+  height: 60vh;
+  margin-top: -5vw;
 }
 
 
@@ -322,4 +335,34 @@ nav h4 {
 
 .hoverLink.white::after {
   background-color: var(--clr-white);
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  margin-inline: auto;
+  display: flex;
+  justify-content: end;
+  align-items: end;
+  user-select: none;
+  cursor: grab;
+}
+
+
+.swiper-slide {
+  height: auto !important;
+  background: none;
+  text-align: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.swiper-slide img {
+  user-select: none;
+  -webkit-user-drag: none;
+  display: inline-block;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
 }

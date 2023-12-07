@@ -1,5 +1,6 @@
 // TODO: Function Calls
 locoMotiveScroll();
+swiperJS();
 image2Video();
 
 cursorEffect("#page1", "#page1-content");
@@ -117,5 +118,19 @@ function image2Video() {
     box.addEventListener("mouseleave", () => {
       videoElem.pause();
     });
+  });
+}
+
+function swiperJS() {
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 4,
+    spaceBetween: 15,
+    speed: 1000,
+    loop: true,
+    autoplay: {
+      delay: 2500,
+      duration: 1,
+      disableOnInterval: false,
+    },
   });
 }
